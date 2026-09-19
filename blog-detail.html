@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mengoptimalkan Pipeline RAG untuk Korporasi - SparkAI Journal</title>
   
-  <!-- Favicon Logo SparkAI -->
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
 
   <!-- Bootstrap 5 CSS CDN -->
@@ -177,7 +176,7 @@
 
     <!-- NAVBAR PILL -->
     <header class="site-header-pill sticky-top">
-      <nav class="navbar navbar-expand-md p-0">
+      <nav class="navbar navbar-expand-md p-0" aria-label="Navigasi Header Detail Esai">
         <a class="brand-title" href="index.html">
           <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo-img" />
           <span>SparkAI</span>
@@ -185,31 +184,32 @@
 
         <div class="ms-auto d-flex align-items-center gap-3">
           <a href="blog.html" class="text-decoration-none fw-semibold small" style="color: var(--raspberry);">
-            <i class="bi bi-arrow-left me-1"></i> Kembali ke Jurnal
+            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i> Kembali ke Jurnal
           </a>
         </div>
       </nav>
     </header>
 
-    <main>
-      <article class="bento-card p-4 p-md-5 mb-4 shadow-sm">
+    <!-- LANDMARK UTAMA: MAIN -->
+    <main id="main-content">
+      <article class="bento-card p-4 p-md-5 mb-4 shadow-sm" aria-labelledby="detail-title-id">
         
         <!-- Header Artikel -->
         <div class="mb-4">
           <a href="blog.html" class="btn-back-pill">
-            <i class="bi bi-arrow-left"></i> Semua Esai
+            <i class="bi bi-arrow-left" aria-hidden="true"></i> Semua Esai
           </a>
           <br />
           <span class="bento-tag mb-3">Arsitektur Retrieval &amp; RAG</span>
           
-          <h1 class="font-serif display-5 fw-bold mb-3" style="color: var(--deep-plum); line-height: 1.2;">
+          <h1 id="detail-title-id" class="font-serif display-5 fw-bold mb-3" style="color: var(--deep-plum); line-height: 1.2;">
             Mengoptimalkan Pipeline Retrieval-Augmented Generation untuk Korporasi
           </h1>
 
           <div class="d-flex flex-wrap gap-4 text-muted small pb-4 border-bottom" style="border-color: var(--border-soft) !important;">
-            <span><i class="bi bi-feather me-1 text-danger"></i> Riset SparkAI Studio</span>
-            <span><i class="bi bi-calendar3 me-1"></i> 14 September 2026</span>
-            <span><i class="bi bi-clock me-1"></i> 5 Menit Waktu Baca</span>
+            <span><i class="bi bi-feather me-1 text-danger" aria-hidden="true"></i> Riset SparkAI Studio</span>
+            <span><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> 14 September 2026</span>
+            <span><i class="bi bi-clock me-1" aria-hidden="true"></i> 5 Menit Waktu Baca</span>
           </div>
         </div>
 
@@ -218,7 +218,7 @@
           <img
             src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop&q=80"
             class="img-fluid w-100"
-            alt="Arsitektur RAG"
+            alt="Ilustrasi pemrosesan data neural pada pipeline RAG"
             style="max-height: 440px; object-fit: cover;"
           />
         </div>
@@ -234,8 +234,8 @@
           </p>
 
           <!-- Alert Khusus Tata Kelola Data -->
-          <div class="editorial-alert my-4 d-flex gap-3 align-items-center">
-            <i class="bi bi-shield-check fs-2 text-danger"></i>
+          <div class="editorial-alert my-4 d-flex gap-3 align-items-center" role="note">
+            <i class="bi bi-shield-check fs-2 text-danger" aria-hidden="true"></i>
             <div>
               <strong class="d-block mb-1">Pedoman Kedaulatan Dokumen:</strong>
               Pastikan lapisan sanitasi informasi identitas pribadi (PII) berjalan sebelum teks diubah ke format vektor (embeddings), guna mencegah kebocoran data rahasia pada log sistem.
@@ -251,19 +251,21 @@
             "Sistem kecerdasan artifisial yang matang tidak berusaha menebak segala hal, melainkan mengetahui secara pasti di mana fakta dapat diverifikasi kembali."
           </blockquote>
 
-          <!-- Poin-poin Penting -->
-          <h3 class="font-serif h4 fw-bold mt-4 mb-3" style="color: var(--deep-plum);">Tiga Pilar Presisi RAG Enterprise:</h3>
+          <!-- FIX HEADING ORDER: Diubah dari h3 ke h2 agar bertingkat runtut dari h1 -->
+          <h2 class="font-serif h4 fw-bold mt-4 mb-3" style="color: var(--deep-plum);">
+            Tiga Pilar Presisi RAG Enterprise:
+          </h2>
           <div class="d-flex flex-column gap-2 mb-4">
             <div class="p-3 rounded-4 bg-light border d-flex gap-3 align-items-center">
-              <span class="badge rounded-pill bg-danger">01</span>
+              <span class="badge rounded-pill bg-danger" aria-hidden="true">01</span>
               <span><strong>Pencarian Campuran (Hybrid Search):</strong> Mengombinasikan pencarian leksikal BM25 dan kedekatan kosinus vektor dense.</span>
             </div>
             <div class="p-3 rounded-4 bg-light border d-flex gap-3 align-items-center">
-              <span class="badge rounded-pill bg-danger">02</span>
+              <span class="badge rounded-pill bg-danger" aria-hidden="true">02</span>
               <span><strong>Penyaringan Konteks Ulang:</strong> Mengeliminasi paragraf bising melalui model re-ranking sebelum mencapai LLM.</span>
             </div>
             <div class="p-3 rounded-4 bg-light border d-flex gap-3 align-items-center">
-              <span class="badge rounded-pill bg-danger">03</span>
+              <span class="badge rounded-pill bg-danger" aria-hidden="true">03</span>
               <span><strong>Jejak Sitasi Interaktif:</strong> Mewajibkan sistem menyertakan tautan kutipan sumber pada setiap klaim jawaban.</span>
             </div>
           </div>
@@ -272,20 +274,23 @@
         <hr class="my-5" style="border-color: var(--border-soft);" />
 
         <!-- Form Komentar Bento -->
-        <section class="p-4 rounded-4" style="background-color: #FFF4F6; max-width: 860px; margin-inline: auto;">
-          <h3 class="font-serif h5 fw-bold mb-3" style="color: var(--deep-plum);">
-            <i class="bi bi-chat-quote me-2"></i>Tinggalkan Tanggapan
+        <section class="p-4 rounded-4" style="background-color: #FFF4F6; max-width: 860px; margin-inline: auto;" aria-labelledby="form-comment-heading">
+          <h3 id="form-comment-heading" class="font-serif h5 fw-bold mb-3" style="color: var(--deep-plum);">
+            <i class="bi bi-chat-quote me-2" aria-hidden="true"></i>Tinggalkan Tanggapan
           </h3>
           <form action="#" method="get">
             <div class="row g-3">
               <div class="col-md-6">
-                <input type="text" class="form-control rounded-pill px-3 py-2 border-1 bg-white" placeholder="Nama Anda" required />
+                <label for="comment-name" class="visually-hidden">Nama Anda</label>
+                <input id="comment-name" type="text" class="form-control rounded-pill px-3 py-2 border-1 bg-white" placeholder="Nama Anda" required />
               </div>
               <div class="col-md-6">
-                <input type="email" class="form-control rounded-pill px-3 py-2 border-1 bg-white" placeholder="Surel Perusahaan" required />
+                <label for="comment-email" class="visually-hidden">Surel Perusahaan</label>
+                <input id="comment-email" type="email" class="form-control rounded-pill px-3 py-2 border-1 bg-white" placeholder="Surel Perusahaan" required />
               </div>
               <div class="col-12">
-                <textarea class="form-control rounded-4 p-3 border-1 bg-white" rows="3" placeholder="Tuliskan gagasan atau pertanyaan Anda mengenai arsitektur RAG..."></textarea>
+                <label for="comment-body" class="visually-hidden">Teks Tanggapan</label>
+                <textarea id="comment-body" class="form-control rounded-4 p-3 border-1 bg-white" rows="3" placeholder="Tuliskan gagasan atau pertanyaan Anda mengenai arsitektur RAG..." required></textarea>
               </div>
               <div class="col-12">
                 <button type="submit" class="btn-bento-primary">Kirimkan Tanggapan</button>
@@ -300,7 +305,7 @@
     <!-- FOOTER PILL -->
     <footer class="footer-pill d-flex flex-wrap justify-content-between align-items-center gap-3">
       <div class="font-serif fw-bold d-flex align-items-center gap-2" style="color: var(--deep-plum);">
-        <img src="assets/img/logo.png" alt="SparkAI" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
+        <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
         SparkAI Studio
       </div>
       <small class="text-muted">&copy; 2026 SparkAI. PABWE P2.</small>

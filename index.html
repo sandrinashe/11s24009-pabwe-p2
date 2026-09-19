@@ -25,11 +25,11 @@
       <div class="navbar">
         <a href="index.html" class="brand">
           <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo" />
-          <span class="brand-dot"></span>
-          SparkAI
+          <span>SparkAI</span>
         </a>
 
-        <nav>
+        <!-- Landmark Nav Unik: aria-label="Navigasi Utama Halaman" -->
+        <nav aria-label="Navigasi Utama Halaman">
           <ul class="nav-links">
             <li><a href="#home" class="active">Beranda</a></li>
             <li><a href="#layanan">Layanan</a></li>
@@ -46,15 +46,16 @@
       </div>
     </header>
 
-    <main style="display: flex; flex-direction: column; gap: 28px;">
+    <!-- LANDMARK UTAMA: MAIN -->
+    <main id="main-content" style="display: flex; flex-direction: column; gap: 28px;">
 
       <!-- HERO BENTO SECTION -->
-      <section id="home" class="hero-bento">
+      <section id="home" class="hero-bento" aria-labelledby="hero-title-id">
         <!-- Hero Big Bento Tile -->
         <article class="bento-card bento-tint hero-main">
           <div>
             <span class="card-tag">Boutique AI Studio</span>
-            <h1 class="hero-title">
+            <h1 id="hero-title-id" class="hero-title">
               Menyatukan keanggunan desain dengan <em>kecerdasan artifisial.</em>
             </h1>
             <p class="hero-desc">
@@ -67,7 +68,7 @@
               <a href="#kontak" class="btn btn-primary">Konsultasikan Ide</a>
               <a href="#layanan" class="btn btn-soft">Lihat Karya</a>
             </div>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">Tersedia untuk kuartal Q3 & Q4 2026</span>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Tersedia untuk kuartal Q3 &amp; Q4 2026</span>
           </div>
         </article>
 
@@ -76,15 +77,18 @@
           <article class="bento-card bento-blush" style="display: flex; flex-direction: column; justify-content: center;">
             <span class="card-tag" style="background: white;">Presisi Model</span>
             <div class="stat-num">99.4%</div>
-            <p style="font-size: 0.95rem; color: var(--deep-plum); font-weight: 500;">
+            <p style="font-size: 0.95rem; color: var(--deep-plum); font-weight: 600;">
               Tingkat retrieval relevan pada arsitektur hybrid RAG korporat.
             </p>
           </article>
 
+          <!-- FIX HEADING ORDER: h3 diubah ke h2 -->
           <article class="bento-card bento-dark" style="display: flex; flex-direction: column; justify-content: center;">
             <span class="card-tag">Filosofi Inti</span>
-            <h3 style="color: white; font-size: 1.25rem;">Human-Centric AI</h3>
-            <p>
+            <h2 style="color: white; font-size: 1.3rem; font-family: var(--font-serif); margin-bottom: 10px;">
+              Human-Centric AI
+            </h2>
+            <p style="color: var(--soft-blush);">
               Teknologi dirancang untuk memperkaya keputusan manusia, bukan menggantikannya secara mekanis.
             </p>
           </article>
@@ -92,15 +96,14 @@
       </section>
 
       <!-- SERVICES ASYMMETRIC BENTO SECTION -->
-      <section id="layanan">
+      <section id="layanan" aria-labelledby="layanan-title-id">
         <div class="section-header">
           <span class="card-tag">Layanan Khusus</span>
-          <h2 class="section-title">Solusi yang Ditenun Rapi</h2>
+          <h2 id="layanan-title-id" class="section-title">Solusi yang Ditenun Rapi</h2>
           <p class="section-subtitle">Setiap sistem dibangun sesuai karakter dan arsitektur unik bisnis Anda.</p>
         </div>
 
         <div class="services-bento">
-          <!-- Big Tile: Agentic Assistant -->
           <article class="bento-card bento-blush service-hero-tile">
             <div>
               <div class="service-tile-icon" style="background: white;">01</div>
@@ -117,7 +120,6 @@
             </div>
           </article>
 
-          <!-- Tile 2: Vision -->
           <article class="bento-card">
             <div class="service-tile-icon">02</div>
             <h3>Computer Vision</h3>
@@ -126,7 +128,6 @@
             </p>
           </article>
 
-          <!-- Tile 3: Workflow -->
           <article class="bento-card">
             <div class="service-tile-icon">03</div>
             <h3>Workflow Autonomy</h3>
@@ -135,7 +136,6 @@
             </p>
           </article>
 
-          <!-- Tile 4: Fine-Tuning Tile -->
           <article class="bento-card bento-tint" style="grid-column: span 2;">
             <div class="service-tile-icon">04</div>
             <h3>Private Model Fine-Tuning</h3>
@@ -147,16 +147,15 @@
       </section>
 
       <!-- PHILOSOPHY / ABOUT BENTO SECTION -->
-      <section id="pendekatan">
+      <section id="pendekatan" aria-labelledby="pendekatan-title-id">
         <div class="about-bento">
-          <!-- Left Big Card -->
           <article class="bento-card bento-dark" style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <span class="card-tag">Keunggulan Kemitraan</span>
-              <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: white; margin-bottom: 16px;">
+              <h2 id="pendekatan-title-id" style="font-family: var(--font-serif); font-size: 2.2rem; color: white; margin-bottom: 16px;">
                 Mengapa Memilih Sentuhan SparkAI?
               </h2>
-              <p style="margin-bottom: 24px;">
+              <p style="margin-bottom: 24px; color: #ffffff;">
                 Kami memadukan ketelitian software engineering dengan sensibilitas estetika produk, memastikan solusi AI tidak hanya bertenaga, tetapi juga menyenangkan saat dioperasikan oleh manusia.
               </p>
             </div>
@@ -165,7 +164,6 @@
             </div>
           </article>
 
-          <!-- Right Subgrid -->
           <div class="about-bento-subgrid">
             <article class="bento-card bento-tint">
               <div class="flow-step-num">Step 01</div>
@@ -195,13 +193,12 @@
       </section>
 
       <!-- CONTACT BENTO SECTION -->
-      <section id="kontak">
+      <section id="kontak" aria-labelledby="kontak-title-id">
         <div class="contact-bento">
-          <!-- Contact Info Card -->
           <article class="bento-card bento-blush" style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <span class="card-tag" style="background: white;">Mulai Sesi</span>
-              <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--deep-plum); margin-bottom: 16px;">
+              <h2 id="kontak-title-id" style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--deep-plum); margin-bottom: 16px;">
                 Mari Merajut Solusi Bersama.
               </h2>
               <p style="color: var(--text-muted); margin-bottom: 24px;">
@@ -215,7 +212,6 @@
             </div>
           </article>
 
-          <!-- Contact Form Card -->
           <article class="bento-card">
             <form action="#" method="get">
               <div class="form-group">
@@ -256,10 +252,12 @@
     <!-- FOOTER PILL -->
     <footer class="footer-bento">
       <div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--deep-plum);">
-        <span class="brand-dot"></span> SparkAI Studio
+        <img src="assets/img/logo.png" alt="SparkAI" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
+        SparkAI Studio
       </div>
 
-      <nav class="footer-nav">
+      <!-- Landmark Nav Unik: aria-label="Navigasi Footer" -->
+      <nav class="footer-nav" aria-label="Navigasi Footer">
         <a href="#home">Beranda</a>
         <a href="#layanan">Layanan</a>
         <a href="blog.html">Blog</a>

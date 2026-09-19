@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SparkAI Journal - Wawasan & Esai Cerdas</title>
   
-  <!-- Favicon Logo SparkAI -->
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
 
   <!-- Bootstrap 5 CSS CDN -->
@@ -57,7 +56,6 @@
       font-family: var(--font-serif);
     }
 
-    /* Navbar Pill */
     .site-header-pill {
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(14px);
@@ -86,7 +84,6 @@
       box-shadow: 0 2px 8px rgba(185, 55, 94, 0.15);
     }
 
-    /* Bento Card Styling */
     .bento-card {
       background-color: #ffffff;
       border: 1px solid var(--border-soft);
@@ -132,7 +129,6 @@
       color: var(--soft-blush);
     }
 
-    /* Button Pill */
     .btn-bento-primary {
       background-color: var(--deep-plum);
       color: #ffffff;
@@ -161,8 +157,8 @@
     }
 
     .btn-bento-outline:hover {
-      border-color: var(--rose-pink);
-      color: var(--rose-pink);
+      border-color: var(--raspberry);
+      color: var(--raspberry);
     }
 
     .footer-pill {
@@ -171,6 +167,11 @@
       border-radius: 50rem;
       padding: 16px 32px;
     }
+
+    /* FIX COLOR CONTRAST PADA KARTU GELAP (WCAG AA > 4.5:1) */
+    .contrast-dark-text {
+      color: #FFE8ED !important; /* Rasio kontras 9.5:1 terhadap #602437 */
+    }
   </style>
 </head>
 <body>
@@ -178,7 +179,7 @@
 
     <!-- NAVBAR PILL -->
     <header class="site-header-pill sticky-top">
-      <nav class="navbar navbar-expand-md p-0">
+      <nav class="navbar navbar-expand-md p-0" aria-label="Navigasi Header Jurnal">
         <a class="brand-title" href="index.html">
           <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo-img" />
           <span>SparkAI</span>
@@ -190,7 +191,7 @@
           data-bs-toggle="collapse"
           data-bs-target="#navBlog"
           aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-label="Buka menu navigasi"
         >
           <i class="bi bi-list fs-3 text-dark"></i>
         </button>
@@ -214,158 +215,168 @@
       </nav>
     </header>
 
-    <!-- HERO JURNAL BENTO -->
-    <section class="bento-card bento-tint p-4 p-md-5">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-8">
-          <span class="bento-tag mb-3">Wawasan &amp; Refleksi</span>
-          <h1 class="font-serif display-5 fw-bold mb-3" style="color: var(--deep-plum);">
-            Catatan dari Meja Riset <em>SparkAI.</em>
-          </h1>
-          <p class="text-muted fs-5 mb-0" style="max-width: 620px;">
-            Esai teknis, eksplorasi arsitektur penalaran model bahasa, dan panduan merancang sistem cerdas yang ramah bagi pengguna bisnis.
-          </p>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control rounded-pill px-4 border-1"
-              style="border-color: var(--border-soft); background: white;"
-              placeholder="Cari topik..."
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- FIX LANDMARK-ONE-MAIN & REGION: Seluruh section dimasukkan ke dalam <main> -->
+    <main id="main-content" class="d-flex flex-column gap-4">
 
-    <!-- FILTER KATEGORI PILL -->
-    <div class="d-flex flex-wrap gap-2">
-      <button class="btn btn-bento-primary">Semua Esai</button>
-      <button class="btn btn-bento-outline">Retrieval &amp; RAG</button>
-      <button class="btn btn-bento-outline">Visi Komputer</button>
-      <button class="btn btn-bento-outline">Etika Model</button>
-      <button class="btn btn-bento-outline">MLOps</button>
-    </div>
-
-    <!-- BENTO GRID ARTIKEL (4 ARTIKEL) -->
-    <section class="row g-4">
-      
-      <!-- Artikel 1 (Featured Card / Asimetris Lebar) -->
-      <div class="col-lg-8">
-        <article class="card bento-card bento-blush h-100 p-4 p-md-5 border-0">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <span class="bento-tag" style="background: white;">Artikel Pilihan</span>
-            <small class="text-muted"><i class="bi bi-clock me-1"></i> 5 menit baca</small>
-          </div>
-          
-          <h2 class="font-serif h2 fw-bold mb-3">
-            <a href="blog-detail.html" class="text-decoration-none" style="color: var(--deep-plum);">
-              Mengoptimalkan Pipeline Retrieval-Augmented Generation (RAG) untuk Korporasi
-            </a>
-          </h2>
-          
-          <p class="text-muted fs-6 mb-4" style="line-height: 1.7;">
-            Menyajikan strategi chunking dokumen semantik dan penerapan hybrid search untuk menghapus halusinasi fakta, sekaligus menjaga privasi basis data internal Anda.
-          </p>
-
-          <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center" style="border-color: var(--border-soft) !important;">
-            <div class="d-flex align-items-center gap-2">
-              <i class="bi bi-feather text-danger fs-5"></i>
-              <span class="fw-semibold small" style="color: var(--deep-plum);">Tim Riset SparkAI</span>
-            </div>
-            <a href="blog-detail.html" class="btn-bento-outline bg-white py-2 px-3 small">
-              Baca Esai <i class="bi bi-arrow-right ms-1"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- Artikel 2 (Tile Gelap Kontras) -->
-      <div class="col-lg-4">
-        <article class="card bento-card bento-dark h-100 p-4 p-md-5 border-0 d-flex flex-column justify-content-between">
-          <div>
-            <span class="bento-tag mb-3">Visi Komputer</span>
-            <h3 class="font-serif h4 fw-bold mb-3 text-white">
-              <a href="blog-detail.html" class="text-decoration-none text-white">
-                Vision Transformers dalam Inspeksi Presisi
-              </a>
-            </h3>
-            <p class="small text-white-50 mb-4">
-              Eksplorasi transisi arsitektur CNN konvensional menuju ViT untuk mendeteksi cacat mikron pada lini produksi.
+      <!-- HERO JURNAL BENTO -->
+      <section class="bento-card bento-tint p-4 p-md-5" aria-labelledby="jurnal-hero-title">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="bento-tag mb-3">Wawasan &amp; Refleksi</span>
+            <h1 id="jurnal-hero-title" class="font-serif display-5 fw-bold mb-3" style="color: var(--deep-plum);">
+              Catatan dari Meja Riset <em>SparkAI.</em>
+            </h1>
+            <p class="text-muted fs-5 mb-0" style="max-width: 620px;">
+              Esai teknis, eksplorasi arsitektur penalaran model bahasa, dan panduan merancang sistem cerdas yang ramah bagi pengguna bisnis.
             </p>
           </div>
+          <div class="col-lg-4 text-lg-end">
+            <form action="#" method="get" class="input-group">
+              <label for="search-input" class="visually-hidden">Cari topik artikel</label>
+              <input
+                id="search-input"
+                type="text"
+                class="form-control rounded-pill px-4 border-1"
+                style="border-color: var(--border-soft); background: white;"
+                placeholder="Cari topik..."
+              />
+            </form>
+          </div>
+        </div>
+      </section>
 
-          <div class="pt-3 border-top border-white-50 d-flex justify-content-between align-items-center">
-            <small class="text-white-50"><i class="bi bi-calendar3 me-1"></i> 11 Sep 2026</small>
-            <a href="blog-detail.html" class="text-white fw-bold text-decoration-none small">
-              Pelajari <i class="bi bi-chevron-right"></i>
-            </a>
-          </div>
-        </article>
-      </div>
+      <!-- FILTER KATEGORI PILL -->
+      <nav aria-label="Filter Kategori Esai" class="d-flex flex-wrap gap-2">
+        <button type="button" class="btn btn-bento-primary">Semua Esai</button>
+        <button type="button" class="btn btn-bento-outline">Retrieval &amp; RAG</button>
+        <button type="button" class="btn btn-bento-outline">Visi Komputer</button>
+        <button type="button" class="btn btn-bento-outline">Etika Model</button>
+        <button type="button" class="btn btn-bento-outline">MLOps</button>
+      </nav>
 
-      <!-- Artikel 3 -->
-      <div class="col-md-6">
-        <article class="card bento-card h-100 p-4 border-0 shadow-sm">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <span class="bento-tag">Keamanan Data</span>
-            <small class="text-muted">6 menit baca</small>
-          </div>
-          <h3 class="font-serif h4 fw-bold mb-2">
-            <a href="blog-detail.html" class="text-decoration-none" style="color: var(--deep-plum);">
-              Prinsip Isolasi Kedaulatan Data pada Model Generatif
-            </a>
-          </h3>
-          <p class="text-muted small mb-4">
-            Mengapa arsitektur zero-retention dan enkripsi lokal menjadi prasyarat sebelum data operasional diolah mesin inferensi.
-          </p>
-          <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-            <small class="text-muted">Oleh Siti Rahma</small>
-            <a href="blog-detail.html" class="fw-bold text-decoration-none" style="color: var(--raspberry);">
-              Baca <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </div>
-        </article>
-      </div>
+      <!-- BENTO GRID ARTIKEL (4 ARTIKEL) -->
+      <section class="row g-4" aria-label="Daftar Artikel Jurnal">
+        
+        <!-- Artikel 1 (Featured Card) -->
+        <div class="col-lg-8">
+          <article class="card bento-card bento-blush h-100 p-4 p-md-5 border-0">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bento-tag" style="background: white;">Artikel Pilihan</span>
+              <small class="text-muted"><i class="bi bi-clock me-1"></i> 5 menit baca</small>
+            </div>
+            
+            <h2 class="font-serif h2 fw-bold mb-3">
+              <a href="blog-detail.html" class="text-decoration-none" style="color: var(--deep-plum);">
+                Mengoptimalkan Pipeline Retrieval-Augmented Generation (RAG) untuk Korporasi
+              </a>
+            </h2>
+            
+            <p class="text-muted fs-6 mb-4" style="line-height: 1.7;">
+              Menyajikan strategi chunking dokumen semantik dan penerapan hybrid search untuk menghapus halusinasi fakta, sekaligus menjaga privasi basis data internal Anda.
+            </p>
 
-      <!-- Artikel 4 -->
-      <div class="col-md-6">
-        <article class="card bento-card h-100 p-4 border-0 shadow-sm">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <span class="bento-tag">MLOps &amp; Proses</span>
-            <small class="text-muted">4 menit baca</small>
-          </div>
-          <h3 class="font-serif h4 fw-bold mb-2">
-            <a href="blog-detail.html" class="text-decoration-none" style="color: var(--deep-plum);">
-              Menjaga Stabilitas Model dari Fenomena Data Drift
-            </a>
-          </h3>
-          <p class="text-muted small mb-4">
-            Panduan mendeteksi pergeseran pola perilaku pengguna agar akurasi sistem prediksi tidak terdegradasi seiring waktu.
-          </p>
-          <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-            <small class="text-muted">Oleh Aris Munandar</small>
-            <a href="blog-detail.html" class="fw-bold text-decoration-none" style="color: var(--raspberry);">
-              Baca <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </div>
-        </article>
-      </div>
+            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center" style="border-color: var(--border-soft) !important;">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-feather text-danger fs-5" aria-hidden="true"></i>
+                <span class="fw-semibold small" style="color: var(--deep-plum);">Tim Riset SparkAI</span>
+              </div>
+              <a href="blog-detail.html" class="btn-bento-outline bg-white py-2 px-3 small">
+                Baca Esai <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
 
-    </section>
+        <!-- Artikel 2 (Tile Gelap Kontras: FIX COLOR CONTRAST) -->
+        <div class="col-lg-4">
+          <article class="card bento-card bento-dark h-100 p-4 p-md-5 border-0 d-flex flex-column justify-content-between">
+            <div>
+              <span class="bento-tag mb-3">Visi Komputer</span>
+              <h2 class="font-serif h4 fw-bold mb-3 text-white">
+                <a href="blog-detail.html" class="text-decoration-none text-white">
+                  Vision Transformers dalam Inspeksi Presisi
+                </a>
+              </h2>
+              <!-- FIX: Mengganti text-white-50 (#b0929b) dengan contrast-dark-text (#FFE8ED) -->
+              <p class="small contrast-dark-text mb-4">
+                Eksplorasi transisi arsitektur CNN konvensional menuju ViT untuk mendeteksi cacat mikron pada lini produksi.
+              </p>
+            </div>
+
+            <!-- FIX: Mengganti text-white-50 dengan contrast-dark-text -->
+            <div class="pt-3 border-top border-white-50 d-flex justify-content-between align-items-center">
+              <small class="contrast-dark-text"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> 11 Sep 2026</small>
+              <a href="blog-detail.html" class="text-white fw-bold text-decoration-none small">
+                Pelajari <i class="bi bi-chevron-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Artikel 3 -->
+        <div class="col-md-6">
+          <article class="card bento-card h-100 p-4 border-0 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bento-tag">Keamanan Data</span>
+              <small class="text-muted">6 menit baca</small>
+            </div>
+            <h2 class="font-serif h4 fw-bold mb-2">
+              <a href="blog-detail.html" class="text-decoration-none" style="color: var(--deep-plum);">
+                Prinsip Isolasi Kedaulatan Data pada Model Generatif
+              </a>
+            </h2>
+            <p class="text-muted small mb-4">
+              Mengapa arsitektur zero-retention dan enkripsi lokal menjadi prasyarat sebelum data operasional diolah mesin inferensi.
+            </p>
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+              <small class="text-muted">Oleh Siti Rahma</small>
+              <a href="blog-detail.html" class="fw-bold text-decoration-none" style="color: var(--berry-rose);">
+                Baca <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Artikel 4 -->
+        <div class="col-md-6">
+          <article class="card bento-card h-100 p-4 border-0 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bento-tag">MLOps &amp; Proses</span>
+              <small class="text-muted">4 menit baca</small>
+            </div>
+            <h2 class="font-serif h4 fw-bold mb-2">
+              <a href="blog-detail.html" class="text-decoration-none" style="color: var(--deep-plum);">
+                Menjaga Stabilitas Model dari Fenomena Data Drift
+              </a>
+            </h2>
+            <p class="text-muted small mb-4">
+              Panduan mendeteksi pergeseran pola perilaku pengguna agar akurasi sistem prediksi tidak terdegradasi seiring waktu.
+            </p>
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+              <small class="text-muted">Oleh Aris Munandar</small>
+              <a href="blog-detail.html" class="fw-bold text-decoration-none" style="color: var(--berry-rose);">
+                Baca <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </section>
+
+    </main>
 
     <!-- FOOTER PILL -->
     <footer class="footer-pill mt-3 d-flex flex-wrap justify-content-between align-items-center gap-3">
       <div class="font-serif fw-bold d-flex align-items-center gap-2" style="color: var(--deep-plum);">
-        <img src="assets/img/logo.png" alt="SparkAI" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
+        <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
         SparkAI Journal
       </div>
-      <div class="d-flex gap-4 small fw-semibold">
+      <!-- Landmark Nav Unik: aria-label="Navigasi Footer Jurnal" -->
+      <nav aria-label="Navigasi Footer Jurnal" class="d-flex gap-4 small fw-semibold">
         <a href="index.html" class="text-muted text-decoration-none">Beranda</a>
         <a href="blog.html" class="text-dark text-decoration-none">Jurnal</a>
         <a href="cv.html" class="text-muted text-decoration-none">CV</a>
-      </div>
+      </nav>
       <small class="text-muted">&copy; 2026 SparkAI Studio. PABWE Praktikum 2.</small>
     </footer>
 
