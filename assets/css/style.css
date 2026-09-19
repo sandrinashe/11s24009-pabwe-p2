@@ -1,8 +1,9 @@
 /* ==========================================================================
    SPARKAI - SOFT EDITORIAL BENTO UI (ROSE ROYALE)
+   PABWE Praktikum 2 - External CSS Murni
    ========================================================================== */
 
-/* 1. CSS VARIABLES */
+/* 1. CSS VARIABLES (DESIGN TOKENS) */
 :root {
   --deep-plum: #602437;
   --berry-rose: #8A2846;
@@ -28,11 +29,11 @@
   --radius-pill: 999px;
 
   --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
-/* 2. RESET & GLOBAL */
+/* 2. RESET & GLOBAL BOX MODEL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -48,7 +49,13 @@ body {
   background-color: var(--bg-page);
   color: var(--text-dark);
   line-height: 1.6;
-  padding: 24px 16px;
+  padding: 20px 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
@@ -56,7 +63,7 @@ a {
   text-decoration: none;
 }
 
-/* 3. PAGE CANVAS FRAME */
+/* 3. PAGE CANVAS WRAPPER */
 .page-canvas {
   max-width: 1200px;
   margin-inline: auto;
@@ -65,23 +72,24 @@ a {
   gap: 24px;
 }
 
-/* 4. HEADER PILL */
+/* 4. HEADER PILL & MOBILE NAVIGATION */
 .site-header {
   position: sticky;
   top: 16px;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-pill);
-  padding: 12px 24px;
+  padding: 10px 24px;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
+  position: relative;
 }
 
 .brand {
@@ -95,23 +103,22 @@ a {
 }
 
 .brand-logo {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   object-fit: cover;
   border-radius: 50%;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 2px 8px rgba(185, 55, 94, 0.15);
+  border: 1.5px solid var(--border-soft);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   list-style: none;
 }
 
 .nav-links a {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-muted);
   transition: color 0.2s ease;
@@ -128,7 +135,50 @@ a {
   gap: 10px;
 }
 
-/* 5. BUTTONS */
+/* Mobile Toggle Hamburger */
+.nav-toggle-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--deep-plum);
+  font-size: 1.4rem;
+}
+
+.mobile-menu-drawer {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: 0 15px 30px rgba(96, 36, 55, 0.12);
+  flex-direction: column;
+  gap: 14px;
+  z-index: 999;
+}
+
+.mobile-menu-drawer.is-open {
+  display: flex;
+}
+
+.mobile-menu-drawer a {
+  font-weight: 600;
+  color: var(--deep-plum);
+  padding: 8px 12px;
+  border-radius: var(--radius-xs);
+}
+
+.mobile-menu-drawer a:hover {
+  background-color: var(--bg-card-blush);
+  color: var(--raspberry);
+}
+
+/* 5. BUTTON STYLES */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -140,7 +190,7 @@ a {
   font-weight: 600;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
@@ -197,7 +247,7 @@ a {
 .bento-dark {
   background-color: var(--bg-card-dark);
   color: var(--text-light);
-  border-color: rgba(255, 202, 212, 0.2);
+  border-color: rgba(255, 202, 212, 0.25);
 }
 
 .card-tag {
@@ -206,7 +256,7 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: var(--radius-pill);
   margin-bottom: 16px;
   background-color: var(--bg-card-blush);
@@ -229,16 +279,16 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 480px;
+  min-height: 460px;
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.3rem, 4.2vw, 3.6rem);
   font-weight: 600;
   line-height: 1.15;
   color: var(--deep-plum);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .hero-title em {
@@ -247,10 +297,10 @@ a {
 }
 
 .hero-desc {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  max-width: 540px;
-  margin-bottom: 32px;
+  max-width: 520px;
+  margin-bottom: 28px;
 }
 
 .hero-bottom-row {
@@ -259,7 +309,7 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  padding-top: 24px;
+  padding-top: 20px;
   border-top: 1px solid var(--border-soft);
 }
 
@@ -271,24 +321,24 @@ a {
 
 .stat-num {
   font-family: var(--font-serif);
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
   line-height: 1;
   color: var(--rose-pink);
   margin-bottom: 6px;
 }
 
-/* 8. SECTION TITLE */
+/* 8. SECTION HEADINGS */
 .section-header {
   text-align: center;
-  max-width: 600px;
+  max-width: 620px;
   margin-inline: auto;
   margin-bottom: 24px;
 }
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
   font-weight: 600;
   color: var(--deep-plum);
   margin-bottom: 8px;
@@ -296,10 +346,10 @@ a {
 
 .section-subtitle {
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
-/* 9. SERVICES ASYMMETRIC BENTO GRID */
+/* 9. SERVICES GRID */
 .services-bento {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -314,25 +364,20 @@ a {
 }
 
 .service-tile-icon {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-sm);
   background-color: var(--bg-card-blush);
   color: var(--raspberry);
   display: grid;
   place-items: center;
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
-.bento-dark .service-tile-icon {
-  background-color: rgba(255, 202, 212, 0.2);
-  color: var(--soft-blush);
+  font-size: 1.25rem;
+  margin-bottom: 18px;
 }
 
 .bento-card h3 {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -342,16 +387,11 @@ a {
   font-size: 0.95rem;
 }
 
-.bento-dark p {
-  color: #fad1db;
-}
-
-/* 10. PHILOSOPHY / ABOUT BENTO */
+/* 10. ABOUT / FILOSOFI */
 .about-bento {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 20px;
-  align-items: stretch;
 }
 
 .about-bento-subgrid {
@@ -362,10 +402,10 @@ a {
 
 .flow-step-num {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-style: italic;
-  color: var(--rose-pink);
-  margin-bottom: 8px;
+  color: var(--raspberry);
+  margin-bottom: 6px;
 }
 
 /* 11. FORM BENTO */
@@ -376,12 +416,12 @@ a {
 }
 
 .form-group {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .form-group label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -394,7 +434,7 @@ input[type="email"],
 textarea,
 select {
   width: 100%;
-  padding: 13px 18px;
+  padding: 12px 16px;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-sm);
   background-color: white;
@@ -412,14 +452,14 @@ select:focus {
   box-shadow: 0 0 0 4px rgba(224, 87, 128, 0.15);
 }
 
-/* 12. FOOTER CARD */
+/* 12. FOOTER PILL */
 .footer-bento {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 24px 32px;
+  padding: 20px 32px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-soft);
   background-color: white;
@@ -427,7 +467,7 @@ select:focus {
 
 .footer-nav {
   display: flex;
-  gap: 24px;
+  gap: 22px;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -452,9 +492,13 @@ select:focus {
   }
 }
 
-@media (max-width: 680px) {
-  .nav-links {
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-cta {
     display: none;
+  }
+  .nav-toggle-btn {
+    display: block;
   }
   .services-bento,
   .about-bento-subgrid {

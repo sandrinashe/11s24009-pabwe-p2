@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SparkAI Studio menghadirkan solusi otomasi cerdas, asisten virtual berbasis LLM, dan visi komputer untuk transformasi digital perusahaan." />
   <title>SparkAI - Intelligent Studio & Craft</title>
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
 
-  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -20,16 +21,16 @@
 <body>
   <div class="page-canvas">
 
-    <!-- HEADER NAVIGATION (PILL STYLE) -->
+    <!-- HEADER NAVIGATION -->
     <header class="site-header">
       <div class="navbar">
         <a href="index.html" class="brand">
-          <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo" />
+          <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo" width="38" height="38" />
           <span>SparkAI</span>
         </a>
 
-        <!-- Landmark Nav Unik: aria-label="Navigasi Utama Halaman" -->
-        <nav aria-label="Navigasi Utama Halaman">
+        <!-- Desktop Nav -->
+        <nav aria-label="Navigasi Utama Desktop">
           <ul class="nav-links">
             <li><a href="#home" class="active">Beranda</a></li>
             <li><a href="#layanan">Layanan</a></li>
@@ -39,9 +40,25 @@
         </nav>
 
         <div class="nav-cta">
-          <a href="blog.html" class="btn btn-outline">Blog</a>
-          <a href="cv.html" class="btn btn-outline">CV</a>
+          <a href="blog.html" class="btn btn-outline">Blog AI</a>
+          <a href="cv.html" class="btn btn-outline">CV Developer</a>
           <a href="#kontak" class="btn btn-primary">Mulai Bicara</a>
+        </div>
+
+        <!-- Tombol Hamburger Mobile -->
+        <button id="mobileNavToggle" type="button" class="nav-toggle-btn" aria-label="Buka Menu Navigasi" aria-expanded="false">
+          ☰
+        </button>
+
+        <!-- Menu Drawer Mobile -->
+        <div id="mobileDrawer" class="mobile-menu-drawer" aria-label="Navigasi Menu Seluler">
+          <a href="#home" class="mobile-link">Beranda</a>
+          <a href="#layanan" class="mobile-link">Layanan</a>
+          <a href="#pendekatan" class="mobile-link">Pendekatan</a>
+          <a href="#kontak" class="mobile-link">Kontak</a>
+          <hr style="border: 0; border-top: 1px solid var(--border-soft);" />
+          <a href="blog.html">Blog AI</a>
+          <a href="cv.html">CV Developer</a>
         </div>
       </div>
     </header>
@@ -51,7 +68,6 @@
 
       <!-- HERO BENTO SECTION -->
       <section id="home" class="hero-bento" aria-labelledby="hero-title-id">
-        <!-- Hero Big Bento Tile -->
         <article class="bento-card bento-tint hero-main">
           <div>
             <span class="card-tag">Boutique AI Studio</span>
@@ -59,20 +75,19 @@
               Menyatukan keanggunan desain dengan <em>kecerdasan artifisial.</em>
             </h1>
             <p class="hero-desc">
-              Kami tidak sekadar memasang algoritma kaku. SparkAI merancang sistem berbasis penalaran bahasa dan visi komputer yang intuitif, luwes, dan menyatu dengan alur bisnis Anda.
+              Kami merancang sistem berbasis penalaran bahasa dan visi komputer yang intuitif, luwes, dan menyatu dengan alur bisnis modern Anda.
             </p>
           </div>
 
           <div class="hero-bottom-row">
-            <div style="display: flex; gap: 12px;">
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
               <a href="#kontak" class="btn btn-primary">Konsultasikan Ide</a>
-              <a href="#layanan" class="btn btn-soft">Lihat Karya</a>
+              <a href="#layanan" class="btn btn-soft">Lihat Layanan</a>
             </div>
             <span style="font-size: 0.85rem; color: var(--text-muted);">Tersedia untuk kuartal Q3 &amp; Q4 2026</span>
           </div>
         </article>
 
-        <!-- Hero Side Grid -->
         <div class="hero-side-grid">
           <article class="bento-card bento-blush" style="display: flex; flex-direction: column; justify-content: center;">
             <span class="card-tag" style="background: white;">Presisi Model</span>
@@ -82,7 +97,6 @@
             </p>
           </article>
 
-          <!-- FIX HEADING ORDER: h3 diubah ke h2 -->
           <article class="bento-card bento-dark" style="display: flex; flex-direction: column; justify-content: center;">
             <span class="card-tag">Filosofi Inti</span>
             <h2 style="color: white; font-size: 1.3rem; font-family: var(--font-serif); margin-bottom: 10px;">
@@ -95,7 +109,7 @@
         </div>
       </section>
 
-      <!-- SERVICES ASYMMETRIC BENTO SECTION -->
+      <!-- SERVICES BENTO SECTION -->
       <section id="layanan" aria-labelledby="layanan-title-id">
         <div class="section-header">
           <span class="card-tag">Layanan Khusus</span>
@@ -123,30 +137,24 @@
           <article class="bento-card">
             <div class="service-tile-icon">02</div>
             <h3>Computer Vision</h3>
-            <p>
-              Inspeksi kualitas visual dan pengenalan anomali pola berkecepatan tinggi untuk lini manufaktur modern.
-            </p>
+            <p>Inspeksi kualitas visual dan pengenalan anomali pola berkecepatan tinggi untuk lini manufaktur modern.</p>
           </article>
 
           <article class="bento-card">
             <div class="service-tile-icon">03</div>
             <h3>Workflow Autonomy</h3>
-            <p>
-              Otomasi ekstraksi berkas dokumen dan integrasi multi-aplikasi tanpa friksi untuk tim Anda.
-            </p>
+            <p>Otomasi ekstraksi berkas dokumen dan integrasi multi-aplikasi tanpa friksi untuk tim Anda.</p>
           </article>
 
           <article class="bento-card bento-tint" style="grid-column: span 2;">
             <div class="service-tile-icon">04</div>
             <h3>Private Model Fine-Tuning</h3>
-            <p>
-              Adaptasi bobot model dasar terhadap dialek industri dan terminologi privat tanpa membiarkan data internal terekspos ke cloud publik.
-            </p>
+            <p>Adaptasi bobot model dasar terhadap dialek industri dan terminologi privat tanpa membiarkan data internal terekspos ke cloud publik.</p>
           </article>
         </div>
       </section>
 
-      <!-- PHILOSOPHY / ABOUT BENTO SECTION -->
+      <!-- PENDEKATAN BENTO SECTION -->
       <section id="pendekatan" aria-labelledby="pendekatan-title-id">
         <div class="about-bento">
           <article class="bento-card bento-dark" style="display: flex; flex-direction: column; justify-content: space-between;">
@@ -252,15 +260,14 @@
     <!-- FOOTER PILL -->
     <footer class="footer-bento">
       <div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--deep-plum);">
-        <img src="assets/img/logo.png" alt="SparkAI" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
+        <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
         SparkAI Studio
       </div>
 
-      <!-- Landmark Nav Unik: aria-label="Navigasi Footer" -->
       <nav class="footer-nav" aria-label="Navigasi Footer">
         <a href="#home">Beranda</a>
         <a href="#layanan">Layanan</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html">Blog AI</a>
         <a href="cv.html">Curriculum Vitae</a>
       </nav>
 
@@ -268,5 +275,24 @@
     </footer>
 
   </div>
+
+  <!-- Script Toggle Navigasi Mobile -->
+  <script>
+    const toggleBtn = document.getElementById('mobileNavToggle');
+    const drawer = document.getElementById('mobileDrawer');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('is-open');
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('is-open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Eksplorasi optimasi pipeline Retrieval-Augmented Generation untuk korporasi bersama SparkAI." />
   <title>Mengoptimalkan Pipeline RAG untuk Korporasi - SparkAI Journal</title>
   
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
@@ -18,7 +19,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
   />
 
-  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -44,12 +45,7 @@
       background-color: var(--bg-page);
       color: #3A1521;
       font-family: var(--font-sans);
-      padding: 24px 16px;
-    }
-
-    .page-canvas {
-      max-width: 1080px;
-      margin-inline: auto;
+      padding: 20px 16px;
     }
 
     .font-serif {
@@ -57,7 +53,7 @@
     }
 
     .site-header-pill {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(14px);
       border: 1px solid var(--border-soft);
       border-radius: 50rem;
@@ -81,51 +77,25 @@
       object-fit: cover;
       border-radius: 50%;
       border: 1.5px solid var(--border-soft);
-      box-shadow: 0 2px 8px rgba(185, 55, 94, 0.15);
-    }
-
-    .bento-card {
-      background-color: #ffffff;
-      border: 1px solid var(--border-soft);
-      border-radius: 2.2rem !important;
-      overflow: hidden;
-    }
-
-    .bento-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 50rem;
-      background-color: #FFE8ED;
-      color: var(--raspberry);
-      display: inline-block;
-    }
-
-    .article-lead {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #552835;
     }
 
     .article-blockquote {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-style: italic;
       color: var(--deep-plum);
       background-color: #FFF4F6;
       border-left: 4px solid var(--raspberry);
       border-radius: 0 1.5rem 1.5rem 0;
-      padding: 2rem;
+      padding: 1.8rem;
       margin-block: 2rem;
     }
 
     .editorial-alert {
       background-color: #FFE8ED;
       border: 1px solid var(--border-soft);
-      border-radius: 1.5rem;
-      padding: 1.5rem;
+      border-radius: 1.2rem;
+      padding: 1.2rem;
       color: var(--deep-plum);
     }
 
@@ -143,26 +113,6 @@
       color: #ffffff;
     }
 
-    .btn-back-pill {
-      border: 1px solid var(--border-soft);
-      background-color: white;
-      border-radius: 50rem;
-      padding: 8px 18px;
-      color: var(--deep-plum);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 20px;
-    }
-
-    .btn-back-pill:hover {
-      border-color: var(--raspberry);
-      color: var(--raspberry);
-    }
-
     .footer-pill {
       background: #ffffff;
       border: 1px solid var(--border-soft);
@@ -172,9 +122,9 @@
   </style>
 </head>
 <body>
-  <div class="page-canvas d-flex flex-column gap-4">
+  <div class="container py-2 d-flex flex-column gap-4" style="max-width: 1080px;">
 
-    <!-- NAVBAR PILL -->
+    <!-- NAVBAR PILL LENGKAP -->
     <header class="site-header-pill sticky-top">
       <nav class="navbar navbar-expand-md p-0" aria-label="Navigasi Header Detail Esai">
         <a class="brand-title" href="index.html">
@@ -182,38 +132,60 @@
           <span>SparkAI</span>
         </a>
 
-        <div class="ms-auto d-flex align-items-center gap-3">
-          <a href="blog.html" class="text-decoration-none fw-semibold small" style="color: var(--raspberry);">
-            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i> Kembali ke Jurnal
-          </a>
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navDetail"
+          aria-expanded="false"
+          aria-label="Buka menu navigasi"
+        >
+          <i class="bi bi-list fs-3 text-dark"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navDetail">
+          <ul class="navbar-nav ms-auto align-items-center gap-3 mt-3 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link text-muted fw-semibold" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" style="color: var(--raspberry);" href="blog.html">Jurnal AI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted fw-semibold" href="cv.html">CV Developer</a>
+            </li>
+            <li class="nav-item ms-md-2">
+              <a class="btn-bento-primary text-decoration-none py-1 px-3 small" href="index.html#kontak">Konsultasi</a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
 
-    <!-- LANDMARK UTAMA: MAIN -->
+    <!-- MAIN ARTICLE -->
     <main id="main-content">
-      <article class="bento-card p-4 p-md-5 mb-4 shadow-sm" aria-labelledby="detail-title-id">
+      <article class="card p-4 p-md-5 mb-4 border-0 shadow-sm" style="border-radius: 2rem; background: white;" aria-labelledby="detail-title-id">
         
         <!-- Header Artikel -->
         <div class="mb-4">
-          <a href="blog.html" class="btn-back-pill">
-            <i class="bi bi-arrow-left" aria-hidden="true"></i> Semua Esai
+          <a href="blog.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 mb-3">
+            <i class="bi bi-arrow-left me-1"></i> Kembali ke Jurnal
           </a>
           <br />
-          <span class="bento-tag mb-3">Arsitektur Retrieval &amp; RAG</span>
+          <span class="badge text-bg-danger rounded-pill px-3 py-1 mb-2">Arsitektur Retrieval &amp; RAG</span>
           
           <h1 id="detail-title-id" class="font-serif display-5 fw-bold mb-3" style="color: var(--deep-plum); line-height: 1.2;">
             Mengoptimalkan Pipeline Retrieval-Augmented Generation untuk Korporasi
           </h1>
 
           <div class="d-flex flex-wrap gap-4 text-muted small pb-4 border-bottom" style="border-color: var(--border-soft) !important;">
-            <span><i class="bi bi-feather me-1 text-danger" aria-hidden="true"></i> Riset SparkAI Studio</span>
-            <span><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> 14 September 2026</span>
-            <span><i class="bi bi-clock me-1" aria-hidden="true"></i> 5 Menit Waktu Baca</span>
+            <span><i class="bi bi-feather me-1 text-danger"></i> Oleh Tim Riset SparkAI</span>
+            <span><i class="bi bi-calendar3 me-1"></i> 14 September 2026</span>
+            <span><i class="bi bi-clock me-1"></i> 5 Menit Waktu Baca</span>
           </div>
         </div>
 
-        <!-- Cover Image Editorial -->
+        <!-- Cover Image Penuh -->
         <div class="rounded-4 overflow-hidden mb-5 border" style="border-color: var(--border-soft);">
           <img
             src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop&q=80"
@@ -223,9 +195,9 @@
           />
         </div>
 
-        <!-- Isi Artikel (Minimal 3 Paragraf Bertema AI) -->
+        <!-- Konten Artikel AI -->
         <div class="article-content" style="max-width: 860px; margin-inline: auto;">
-          <p class="article-lead mb-4">
+          <p class="fs-5 mb-4" style="line-height: 1.8; color: #441a27;">
             Mengadopsi model kecerdasan artifisial skala besar bukan lagi sebatas perlombaan memperbanyak parameter. Bagi institusi enterprise, tantangan sesungguhnya adalah bagaimana menjinakkan kecenderungan model untuk berhalusinasi dan mengikat responsnya pada fakta hukum atau operasional yang dapat diverifikasi secara utuh.
           </p>
 
@@ -246,12 +218,12 @@
             Eksperimen di laboratorium kami membuktikan bahwa penentu presisi jawaban terbesar terletak pada fase <em>semantic chunking</em>. Dokumen tidak boleh diiris secara kaku berdasarkan jumlah karakter acak, melainkan harus dipisah menurut unit makna wacana, dilengkapi hierarki subjudul, dan dipadukan dengan teknik <em>cross-encoder re-ranking</em> agar informasi yang diteruskan ke prompt memiliki nilai relevansi tertinggi.
           </p>
 
-          <!-- Blockquote Cantik -->
+          <!-- Blockquote -->
           <blockquote class="article-blockquote">
             "Sistem kecerdasan artifisial yang matang tidak berusaha menebak segala hal, melainkan mengetahui secara pasti di mana fakta dapat diverifikasi kembali."
           </blockquote>
 
-          <!-- FIX HEADING ORDER: Diubah dari h3 ke h2 agar bertingkat runtut dari h1 -->
+          <!-- Urutan Heading H2 -->
           <h2 class="font-serif h4 fw-bold mt-4 mb-3" style="color: var(--deep-plum);">
             Tiga Pilar Presisi RAG Enterprise:
           </h2>
@@ -302,12 +274,17 @@
       </article>
     </main>
 
-    <!-- FOOTER PILL -->
+    <!-- FOOTER PILL LENGKAP -->
     <footer class="footer-pill d-flex flex-wrap justify-content-between align-items-center gap-3">
       <div class="font-serif fw-bold d-flex align-items-center gap-2" style="color: var(--deep-plum);">
         <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
         SparkAI Studio
       </div>
+      <nav aria-label="Navigasi Footer Detail" class="d-flex gap-4 small fw-semibold">
+        <a href="index.html" class="text-muted text-decoration-none">Beranda</a>
+        <a href="blog.html" class="text-dark text-decoration-none">Jurnal AI</a>
+        <a href="cv.html" class="text-muted text-decoration-none">CV Developer</a>
+      </nav>
       <small class="text-muted">&copy; 2026 SparkAI. PABWE P2.</small>
     </footer>
 
