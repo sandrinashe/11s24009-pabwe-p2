@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Vitae - Sandrina Trianisa Sihite | SparkAI</title>
+  
+  <!-- Favicon Logo SparkAI -->
+  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+
+  <!-- TAILWIND CSS v4 Play CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- TABLER ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+  />
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind 4 Tokens & Style -->
+  <style type="text/tailwindcss">
+    @theme {
+      --color-plum: #602437;
+      --color-berry: #8A2846;
+      --color-raspberry: #B9375E;
+      --color-blush: #FFCAD4;
+      --color-rose: #E05780;
+      
+      --font-serif: "Playfair Display", Georgia, serif;
+      --font-sans: "Plus Jakarta Sans", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-[#FBF0F2] text-[#3A1521] font-[var(--font-sans)] antialiased p-4 sm:p-6">
+
+  <div class="max-w-5xl mx-auto flex flex-col gap-5">
+
+    <!-- NAVBAR PILL -->
+    <header class="sticky top-4 z-50 bg-white/90 backdrop-blur-md border border-[#F1D4DB] rounded-full px-6 py-2.5 flex items-center justify-between shadow-xs">
+      <a href="index.html" class="flex items-center gap-2.5 font-[var(--font-serif)] text-xl font-bold text-plum">
+        <img 
+          src="assets/img/logo.png" 
+          alt="SparkAI Logo" 
+          class="w-9 h-9 object-cover rounded-full border border-[#F1D4DB] shadow-xs"
+        />
+        <span>SparkAI</span>
+      </a>
+
+      <nav class="flex items-center gap-4 sm:gap-6 text-sm font-semibold">
+        <a href="index.html" class="text-slate-500 hover:text-raspberry transition">Beranda</a>
+        <a href="blog.html" class="text-slate-500 hover:text-raspberry transition">Jurnal</a>
+        <a href="cv.html" class="text-raspberry bg-[#FFE8ED] px-3.5 py-1 rounded-full border border-blush/60">CV</a>
+      </nav>
+    </header>
+
+    <!-- BENTO PROFILE GRID -->
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      <!-- BENTO 1: HERO BIO (SPAN 2 KOLOM) -->
+      <section class="md:col-span-2 bg-white border border-[#F1D4DB] rounded-[36px] p-8 sm:p-10 flex flex-col justify-between shadow-sm relative overflow-hidden">
+        <div class="relative z-10">
+          <span class="inline-block text-xs uppercase font-bold tracking-wider px-3.5 py-1.5 rounded-full bg-[#FFE8ED] text-raspberry mb-4">
+            Pengembang Web &amp; Penggemar AI
+          </span>
+          <h1 class="font-[var(--font-serif)] text-3xl sm:text-4xl font-bold text-plum tracking-tight mb-2">
+            Sandrina Trianisa Sihite
+          </h1>
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
+            Mahasiswi Informatika di Institut Teknologi Del yang mendalami perancangan antarmuka adaptif, arsitektur kode terstruktur, dan penerapan sistem cerdas untuk web enterprise.
+          </p>
+        </div>
+
+        <!-- Kontak Cepat Pill -->
+        <div class="mt-8 pt-6 border-t border-[#F1D4DB] flex flex-wrap gap-4 text-xs font-semibold text-slate-600 relative z-10">
+          <a href="mailto:sandrina.sihite@del.ac.id" class="flex items-center gap-1.5 hover:text-raspberry transition">
+            <i class="ti ti-mail text-rose text-sm"></i> sandrina.sihite@del.ac.id
+          </a>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-1.5">
+            <i class="ti ti-map-pin text-rose text-sm"></i> Toba, Sumatera Utara
+          </span>
+          <span class="text-slate-300">•</span>
+          <a href="https://github.com" target="_blank" class="flex items-center gap-1.5 hover:text-raspberry transition">
+            <i class="ti ti-brand-github text-rose text-sm"></i> GitHub
+          </a>
+          <span class="text-slate-300">•</span>
+          <a href="https://linkedin.com" target="_blank" class="flex items-center gap-1.5 hover:text-raspberry transition">
+            <i class="ti ti-brand-linkedin text-rose text-sm"></i> LinkedIn
+          </a>
+        </div>
+      </section>
+
+      <!-- BENTO 2: AVATAR LOGO CARD (KONTRAST GELAP) -->
+      <section class="bg-plum text-white border border-blush/20 rounded-[36px] p-8 flex flex-col justify-between shadow-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-xs uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-white/15 text-blush">
+            Identitas
+          </span>
+          <i class="ti ti-sparkles text-rose text-xl"></i>
+        </div>
+
+        <div class="my-6 text-center">
+          <div class="w-24 h-24 mx-auto rounded-3xl overflow-hidden border-2 border-blush/40 shadow-inner p-1 bg-white">
+            <img 
+              src="assets/img/logo.png" 
+              alt="Sandrina Trianisa Sihite" 
+              class="w-full h-full object-cover rounded-2xl"
+            />
+          </div>
+          <h2 class="font-[var(--font-serif)] text-xl font-bold mt-4">Institut Teknologi Del</h2>
+          <p class="text-xs text-[#fad1db] mt-1">S1 Informatika — Angkatan 2024</p>
+        </div>
+
+        <div class="text-center">
+          <span class="text-xs bg-white/10 px-3 py-1.5 rounded-full text-blush font-medium inline-block">
+            Tersedia untuk Kolaborasi Proyek
+          </span>
+        </div>
+      </section>
+
+      <!-- BENTO 3: ABOUT / FILOSOFI (TINT BLUSH) -->
+      <section class="bg-[#FFE8ED] border border-[#F1D4DB] rounded-[36px] p-8 flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-wider text-raspberry block mb-3">Tentang Saya</span>
+          <h3 class="font-[var(--font-serif)] text-xl font-bold text-plum mb-3">
+            Sintesis Logika &amp; Kepekaan Visual
+          </h3>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            Menyukai proses memecahkan tantangan komputasi terstruktur, lalu menyajikannya dalam wujud antarmuka pengguna yang bersih, tenang, dan responsif.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#F1D4DB] text-xs font-semibold text-raspberry flex justify-between">
+          <span>Fokus: Full-Stack &amp; Web AI</span>
+          <span>2026</span>
+        </div>
+      </section>
+
+      <!-- BENTO 4: KEAHLIAN TEKNIS (CHIPS) -->
+      <section class="bg-white border border-[#F1D4DB] rounded-[36px] p-8 shadow-sm">
+        <span class="text-xs uppercase font-bold tracking-wider text-raspberry block mb-3">Teknologi</span>
+        <h3 class="font-[var(--font-serif)] text-xl font-bold text-plum mb-4">Keahlian Utama</h3>
+        
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-xl bg-[#FFF4F6] text-plum text-xs font-semibold border border-[#F1D4DB]">HTML5 Semantik</span>
+          <span class="px-3 py-1.5 rounded-xl bg-[#FFF4F6] text-plum text-xs font-semibold border border-[#F1D4DB]">CSS Modern &amp; Bento Grid</span>
+          <span class="px-3 py-1.5 rounded-xl bg-[#FFF4F6] text-plum text-xs font-semibold border border-[#F1D4DB]">Tailwind CSS 4</span>
+          <span class="px-3 py-1.5 rounded-xl bg-[#FFF4F6] text-plum text-xs font-semibold border border-[#F1D4DB]">Bootstrap 5</span>
+          <span class="px-3 py-1.5 rounded-xl bg-[#FFF4F6] text-plum text-xs font-semibold border border-[#F1D4DB]">Java &amp; OOP</span>
+          <span class="px-3 py-1.5 rounded-xl bg-[#FFF4F6] text-plum text-xs font-semibold border border-[#F1D4DB]">Bahasa C &amp; Pointer</span>
+          <span class="px-3 py-1.5 rounded-xl bg-[#FFF4F6] text-plum text-xs font-semibold border border-[#F1D4DB]">SQL &amp; Relasional</span>
+          <span class="px-3 py-1.5 rounded-xl bg-[#FFF4F6] text-plum text-xs font-semibold border border-[#F1D4DB]">Git Version Control</span>
+        </div>
+      </section>
+
+      <!-- BENTO 5: RIWAYAT PENDIDIKAN -->
+      <section class="bg-white border border-[#F1D4DB] rounded-[36px] p-8 shadow-sm">
+        <span class="text-xs uppercase font-bold tracking-wider text-raspberry block mb-3">Akademik</span>
+        <h3 class="font-[var(--font-serif)] text-xl font-bold text-plum mb-3">Pendidikan</h3>
+        
+        <div class="space-y-4">
+          <div class="pl-4 border-l-2 border-rose">
+            <span class="text-xs font-bold text-rose">2024 — Sekarang</span>
+            <h4 class="font-bold text-plum text-base mt-0.5">Institut Teknologi Del</h4>
+            <p class="text-xs text-slate-500">Sarjana Informatika (S1)</p>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Mempelajari Struktur Data, Pemrograman Berorientasi Objek, Arsitektur Sistem, serta Rekayasa Aplikasi Berbasis Web.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENTO 6: PENGALAMAN & ORGANISASI (SPAN 3 KOLOM) -->
+      <section class="md:col-span-3 bg-white border border-[#F1D4DB] rounded-[36px] p-8 sm:p-10 shadow-sm">
+        <span class="text-xs uppercase font-bold tracking-wider text-raspberry block mb-1">Jejak Langkah</span>
+        <h3 class="font-[var(--font-serif)] text-2xl font-bold text-plum mb-6">Pengalaman &amp; Peran</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="p-6 rounded-3xl bg-[#FFF4F6] border border-[#F1D4DB]">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-[var(--font-serif)] font-bold text-plum text-lg">Front-End Developer Praktikan</h4>
+              <span class="text-xs font-bold text-rose bg-white px-2.5 py-1 rounded-full border border-blush">2026</span>
+            </div>
+            <p class="text-xs font-semibold text-berry mb-3">Proyek Praktikum PABWE — SparkAI Enterprise</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Membangun arsitektur antarmuka multi-teknologi yang meliputi landing page bento dengan CSS murni, portal artikel dengan Bootstrap 5, dan CV digital interaktif berbasis Tailwind 4.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-[#FFF4F6] border border-[#F1D4DB]">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-[var(--font-serif)] font-bold text-plum text-lg">Mentor Mahasiswa &amp; Peer Leader</h4>
+              <span class="text-xs font-bold text-rose bg-white px-2.5 py-1 rounded-full border border-blush">2025 — 2026</span>
+            </div>
+            <p class="text-xs font-semibold text-berry mb-3">Komunitas Asrama Mahasiswa</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mendampingi rekan dan adik asuh dalam manajemen akademik, persiapan evaluasi tengah semester, serta pembentukan logika dasar pemrograman.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENTO 7: PROYEK TERPILIH (SPAN 3 KOLOM) -->
+      <section class="md:col-span-3 bg-[#FFE8ED] border border-[#F1D4DB] rounded-[36px] p-8 sm:p-10 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+          <div>
+            <span class="text-xs uppercase font-bold tracking-wider text-raspberry block mb-1">Karya Terpilih</span>
+            <h3 class="font-[var(--font-serif)] text-2xl font-bold text-plum">Implementasi Proyek Terpadu</h3>
+          </div>
+          <span class="text-xs font-semibold text-slate-600">PABWE Praktikum 2 (2026)</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Card Proyek 1 -->
+          <div class="bg-white p-6 rounded-3xl border border-[#F1D4DB] flex flex-col justify-between shadow-xs">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-raspberry">Landing Page (CSS Murni)</span>
+                <i class="ti ti-palette text-rose text-base"></i>
+              </div>
+              <h4 class="font-[var(--font-serif)] font-bold text-plum text-lg mb-2">SparkAI Studio Platform</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Landing page boutique AI studio dengan sistem tata letak asimetris bento, CSS variables, dan responsivitas penuh tanpa bantuan framework.
+              </p>
+            </div>
+            <a href="index.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-rose hover:text-plum transition">
+              Kunjungi Laman <i class="ti ti-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Card Proyek 2 -->
+          <div class="bg-white p-6 rounded-3xl border border-[#F1D4DB] flex flex-col justify-between shadow-xs">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-raspberry">Portal Artikel (Bootstrap 5)</span>
+                <i class="ti ti-book text-rose text-base"></i>
+              </div>
+              <h4 class="font-[var(--font-serif)] font-bold text-plum text-lg mb-2">SparkAI Journal &amp; Detail</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Sistem publikasi artikel seputar kecerdasan artifisial, RAG, dan etika model dengan komponen terstruktur Bootstrap 5.
+              </p>
+            </div>
+            <a href="blog.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-rose hover:text-plum transition">
+              Buka Jurnal <i class="ti ti-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER PILL -->
+    <footer class="bg-white border border-[#F1D4DB] rounded-full px-8 py-3.5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2 shadow-xs">
+      <div class="flex items-center gap-2 font-semibold text-plum">
+        <img src="assets/img/logo.png" alt="SparkAI" class="w-5 h-5 rounded-full object-cover" />
+        <span>&copy; 2026 Sandrina Trianisa Sihite — SparkAI Curriculum Vitae.</span>
+      </div>
+      <div class="flex gap-4 font-semibold text-plum">
+        <a href="index.html" class="hover:text-raspberry transition">Beranda</a>
+        <a href="blog.html" class="hover:text-raspberry transition">Jurnal</a>
+        <a href="cv.html" class="text-raspberry">CV</a>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

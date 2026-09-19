@@ -1,0 +1,471 @@
+/* ==========================================================================
+   SPARKAI - SOFT EDITORIAL BENTO UI (ROSE ROYALE)
+   ========================================================================== */
+
+/* 1. CSS VARIABLES */
+:root {
+  --deep-plum: #602437;
+  --berry-rose: #8A2846;
+  --raspberry: #B9375E;
+  --soft-blush: #FFCAD4;
+  --rose-pink: #E05780;
+
+  --bg-page: #FBF0F2;
+  --bg-card: #FFFFFF;
+  --bg-card-tint: #FFF4F6;
+  --bg-card-blush: #FFE8ED;
+  --bg-card-dark: #602437;
+
+  --text-dark: #3A1521;
+  --text-muted: #7B5461;
+  --text-light: #FDE8ED;
+  --border-soft: #F1D4DB;
+
+  --radius-xs: 12px;
+  --radius-sm: 18px;
+  --radius-md: 26px;
+  --radius-lg: 36px;
+  --radius-pill: 999px;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* 2. RESET & GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.6;
+  padding: 24px 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 3. PAGE CANVAS FRAME */
+.page-canvas {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 4. HEADER PILL */
+.site-header {
+  position: sticky;
+  top: 16px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--deep-plum);
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 2px 8px rgba(185, 55, 94, 0.15);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--raspberry);
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 5. BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding-inline: 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--deep-plum);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--berry-rose);
+}
+
+.btn-outline {
+  border-color: var(--border-soft);
+  background-color: white;
+  color: var(--deep-plum);
+}
+
+.btn-outline:hover {
+  border-color: var(--raspberry);
+  color: var(--raspberry);
+}
+
+.btn-soft {
+  background-color: var(--bg-card-blush);
+  color: var(--deep-plum);
+}
+
+.btn-soft:hover {
+  background-color: var(--soft-blush);
+}
+
+/* 6. BENTO CARD PRIMITIVES */
+.bento-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-tint {
+  background-color: var(--bg-card-tint);
+}
+
+.bento-blush {
+  background-color: var(--bg-card-blush);
+}
+
+.bento-dark {
+  background-color: var(--bg-card-dark);
+  color: var(--text-light);
+  border-color: rgba(255, 202, 212, 0.2);
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+  background-color: var(--bg-card-blush);
+  color: var(--raspberry);
+}
+
+.bento-dark .card-tag {
+  background-color: rgba(255, 202, 212, 0.2);
+  color: var(--soft-blush);
+}
+
+/* 7. HERO BENTO SECTION */
+.hero-bento {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
+}
+
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 480px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--deep-plum);
+  margin-bottom: 20px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--raspberry);
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+.hero-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.hero-side-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--rose-pink);
+  margin-bottom: 6px;
+}
+
+/* 8. SECTION TITLE */
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--deep-plum);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* 9. SERVICES ASYMMETRIC BENTO GRID */
+.services-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-hero-tile {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-tile-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-card-blush);
+  color: var(--raspberry);
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.bento-dark .service-tile-icon {
+  background-color: rgba(255, 202, 212, 0.2);
+  color: var(--soft-blush);
+}
+
+.bento-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.bento-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.bento-dark p {
+  color: #fad1db;
+}
+
+/* 10. PHILOSOPHY / ABOUT BENTO */
+.about-bento {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.about-bento-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.flow-step-num {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--rose-pink);
+  margin-bottom: 8px;
+}
+
+/* 11. FORM BENTO */
+.contact-bento {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--deep-plum);
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 13px 18px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  background-color: white;
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--rose-pink);
+  box-shadow: 0 0 0 4px rgba(224, 87, 128, 0.15);
+}
+
+/* 12. FOOTER CARD */
+.footer-bento {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 24px 32px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-soft);
+  background-color: white;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.footer-nav a:hover {
+  color: var(--raspberry);
+}
+
+/* 13. RESPONSIVE BREAKPOINTS */
+@media (max-width: 960px) {
+  .hero-bento,
+  .about-bento,
+  .contact-bento {
+    grid-template-columns: 1fr;
+  }
+  .services-bento {
+    grid-template-columns: 1fr 1fr;
+  }
+  .service-hero-tile {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 680px) {
+  .nav-links {
+    display: none;
+  }
+  .services-bento,
+  .about-bento-subgrid {
+    grid-template-columns: 1fr;
+  }
+  .service-hero-tile {
+    grid-column: span 1;
+  }
+  .footer-bento {
+    border-radius: var(--radius-md);
+    flex-direction: column;
+    text-align: center;
+  }
+}
