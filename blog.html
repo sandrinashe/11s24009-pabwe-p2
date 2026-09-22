@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="SparkAI Journal - Kumpulan artikel teknis arsitektur AI, Retrieval-Augmented Generation, dan MLOps." />
+  <meta name="theme-color" content="#602437" />
   <title>SparkAI Journal - Wawasan & Esai Cerdas</title>
   
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
@@ -27,98 +28,8 @@
     rel="stylesheet"
   />
 
-  <style>
-    :root {
-      --deep-plum: #602437;
-      --berry-rose: #8A2846;
-      --raspberry: #B9375E;
-      --soft-blush: #FFCAD4;
-      --rose-pink: #E05780;
-
-      --bg-page: #FBF0F2;
-      --border-soft: #F1D4DB;
-      --font-serif: "Playfair Display", Georgia, serif;
-      --font-sans: "Plus Jakarta Sans", sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-page);
-      color: #3A1521;
-      font-family: var(--font-sans);
-      padding: 20px 16px;
-    }
-
-    .font-serif {
-      font-family: var(--font-serif);
-    }
-
-    .site-header-pill {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-soft);
-      border-radius: 50rem;
-      padding: 8px 24px;
-    }
-
-    .brand-title {
-      font-family: var(--font-serif);
-      color: var(--deep-plum);
-      font-size: 1.45rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo-img {
-      width: 38px;
-      height: 38px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5px solid var(--border-soft);
-    }
-
-    .card-blog-bento {
-      background-color: #ffffff;
-      border: 1px solid var(--border-soft);
-      border-radius: 1.8rem;
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .card-blog-bento:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 30px rgba(96, 36, 55, 0.09);
-    }
-
-    .card-blog-bento .card-img-top {
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .btn-bento-primary {
-      background-color: var(--deep-plum);
-      color: #ffffff;
-      border-radius: 50rem;
-      padding: 9px 22px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border: none;
-    }
-
-    .btn-bento-primary:hover {
-      background-color: var(--berry-rose);
-      color: #ffffff;
-    }
-
-    .footer-pill {
-      background: #ffffff;
-      border: 1px solid var(--border-soft);
-      border-radius: 50rem;
-      padding: 16px 32px;
-    }
-  </style>
+  <!-- Shared External Blog CSS (Bebas Duplikasi) -->
+  <link rel="stylesheet" href="assets/css/blog.css" />
 </head>
 <body>
   <div class="container py-2 d-flex flex-column gap-4" style="max-width: 1140px;">
@@ -127,7 +38,7 @@
     <header class="site-header-pill sticky-top">
       <nav class="navbar navbar-expand-md p-0" aria-label="Navigasi Header Jurnal">
         <a class="brand-title" href="index.html">
-          <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo-img" />
+          <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo-img" width="38" height="38" />
           <span>SparkAI</span>
         </a>
 
@@ -154,7 +65,7 @@
               <a class="nav-link text-muted fw-semibold" href="cv.html">CV Developer</a>
             </li>
             <li class="nav-item ms-md-2">
-              <a class="btn-bento-primary text-decoration-none" href="index.html#kontak">Konsultasi</a>
+              <a class="btn-bento-primary" href="index.html#kontak">Konsultasi</a>
             </li>
           </ul>
         </div>
@@ -191,7 +102,7 @@
         </div>
       </section>
 
-      <!-- FILTER KATEGORI BADGE -->
+      <!-- FILTER KATEGORI BADGE BOOTSTRAP -->
       <nav aria-label="Filter Kategori" class="d-flex flex-wrap gap-2">
         <span class="badge text-bg-danger rounded-pill px-3 py-2 fs-6">Semua Esai</span>
         <span class="badge text-bg-light border rounded-pill px-3 py-2 fs-6 text-dark">Retrieval &amp; RAG</span>
@@ -210,6 +121,8 @@
               src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=80"
               class="card-img-top"
               alt="Arsitektur RAG"
+              width="800"
+              height="220"
             />
             <div class="card-body p-4 d-flex flex-column">
               <div class="d-flex justify-content-between align-items-center mb-2">
@@ -240,6 +153,8 @@
               src="https://images.unsplash.com/photo-1507146426996-ef053888b6be?w=800&auto=format&fit=crop&q=80"
               class="card-img-top"
               alt="Vision Transformers"
+              width="800"
+              height="220"
             />
             <div class="card-body p-4 d-flex flex-column">
               <div class="d-flex justify-content-between align-items-center mb-2">
@@ -270,6 +185,8 @@
               src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80"
               class="card-img-top"
               alt="Keamanan Data AI"
+              width="800"
+              height="220"
             />
             <div class="card-body p-4 d-flex flex-column">
               <div class="d-flex justify-content-between align-items-center mb-2">
@@ -300,6 +217,8 @@
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
               class="card-img-top"
               alt="Predictive Analytics"
+              width="800"
+              height="220"
             />
             <div class="card-body p-4 d-flex flex-column">
               <div class="d-flex justify-content-between align-items-center mb-2">
@@ -327,10 +246,10 @@
 
     </main>
 
-    <!-- FOOTER PILL DENGAN NAVIGASI LENGKAP -->
+    <!-- FOOTER PILL NAVIGASI LENGKAP -->
     <footer class="footer-pill mt-3 d-flex flex-wrap justify-content-between align-items-center gap-3">
       <div class="font-serif fw-bold d-flex align-items-center gap-2" style="color: var(--deep-plum);">
-        <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
+        <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" width="24" height="24" />
         SparkAI Journal
       </div>
       <nav aria-label="Navigasi Footer Jurnal" class="d-flex gap-4 small fw-semibold">

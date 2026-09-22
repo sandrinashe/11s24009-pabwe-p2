@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="SparkAI Studio menghadirkan solusi otomasi cerdas, asisten virtual berbasis LLM, dan visi komputer untuk transformasi digital perusahaan." />
+  <meta name="theme-color" content="#602437" />
   <title>SparkAI - Intelligent Studio & Craft</title>
+  
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
 
   <!-- Google Fonts -->
@@ -15,7 +17,7 @@
     rel="stylesheet"
   />
 
-  <!-- External CSS Murni -->
+  <!-- External CSS Murni (Separation of Concern Maksimal) -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -29,7 +31,7 @@
           <span>SparkAI</span>
         </a>
 
-        <!-- Desktop Nav -->
+        <!-- Desktop Navigation -->
         <nav aria-label="Navigasi Utama Desktop">
           <ul class="nav-links">
             <li><a href="#home" class="active">Beranda</a></li>
@@ -56,7 +58,7 @@
           <a href="#layanan" class="mobile-link">Layanan</a>
           <a href="#pendekatan" class="mobile-link">Pendekatan</a>
           <a href="#kontak" class="mobile-link">Kontak</a>
-          <hr style="border: 0; border-top: 1px solid var(--border-soft);" />
+          <hr class="drawer-divider" />
           <a href="blog.html">Blog AI</a>
           <a href="cv.html">CV Developer</a>
         </div>
@@ -64,7 +66,7 @@
     </header>
 
     <!-- LANDMARK UTAMA: MAIN -->
-    <main id="main-content" style="display: flex; flex-direction: column; gap: 28px;">
+    <main id="main-content" class="main-layout">
 
       <!-- HERO BENTO SECTION -->
       <section id="home" class="hero-bento" aria-labelledby="hero-title-id">
@@ -80,29 +82,29 @@
           </div>
 
           <div class="hero-bottom-row">
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <div class="hero-action-group">
               <a href="#kontak" class="btn btn-primary">Konsultasikan Ide</a>
               <a href="#layanan" class="btn btn-soft">Lihat Layanan</a>
             </div>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">Tersedia untuk kuartal Q3 &amp; Q4 2026</span>
+            <span class="hero-availability">Tersedia untuk kuartal Q3 &amp; Q4 2026</span>
           </div>
         </article>
 
         <div class="hero-side-grid">
-          <article class="bento-card bento-blush" style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="card-tag" style="background: white;">Presisi Model</span>
+          <article class="bento-card bento-blush hero-side-card">
+            <span class="card-tag tag-white">Presisi Model</span>
             <div class="stat-num">99.4%</div>
-            <p style="font-size: 0.95rem; color: var(--deep-plum); font-weight: 600;">
+            <p class="stat-desc">
               Tingkat retrieval relevan pada arsitektur hybrid RAG korporat.
             </p>
           </article>
 
-          <article class="bento-card bento-dark" style="display: flex; flex-direction: column; justify-content: center;">
+          <article class="bento-card bento-dark hero-side-card">
             <span class="card-tag">Filosofi Inti</span>
-            <h2 style="color: white; font-size: 1.3rem; font-family: var(--font-serif); margin-bottom: 10px;">
+            <h2 class="card-title-light">
               Human-Centric AI
             </h2>
-            <p style="color: var(--soft-blush);">
+            <p class="card-text-blush">
               Teknologi dirancang untuk memperkaya keputusan manusia, bukan menggantikannya secara mekanis.
             </p>
           </article>
@@ -120,17 +122,15 @@
         <div class="services-bento">
           <article class="bento-card bento-blush service-hero-tile">
             <div>
-              <div class="service-tile-icon" style="background: white;">01</div>
-              <span class="card-tag" style="background: white;">Fokus Utama</span>
+              <div class="service-tile-icon icon-bg-white">01</div>
+              <span class="card-tag tag-white">Fokus Utama</span>
               <h3>Conversational Intelligence &amp; RAG</h3>
-              <p style="max-width: 520px; margin-top: 8px;">
+              <p class="service-desc-constrained">
                 Membangun agen percakapan berbobot yang mampu memahami konteks dokumen internal, regulasi operasional, dan merespons pelanggan dengan gaya tutur alami.
               </p>
             </div>
-            <div style="margin-top: 24px;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--raspberry); text-transform: uppercase;">
-                Termasuk: Hybrid Vector Search • Cross-Encoder Re-ranking • Guardrails
-              </span>
+            <div class="service-footer-spec">
+              Termasuk: Hybrid Vector Search • Cross-Encoder Re-ranking • Guardrails
             </div>
           </article>
 
@@ -146,7 +146,7 @@
             <p>Otomasi ekstraksi berkas dokumen dan integrasi multi-aplikasi tanpa friksi untuk tim Anda.</p>
           </article>
 
-          <article class="bento-card bento-tint" style="grid-column: span 2;">
+          <article class="bento-card bento-tint tile-span-2">
             <div class="service-tile-icon">04</div>
             <h3>Private Model Fine-Tuning</h3>
             <p>Adaptasi bobot model dasar terhadap dialek industri dan terminologi privat tanpa membiarkan data internal terekspos ke cloud publik.</p>
@@ -157,17 +157,17 @@
       <!-- PENDEKATAN BENTO SECTION -->
       <section id="pendekatan" aria-labelledby="pendekatan-title-id">
         <div class="about-bento">
-          <article class="bento-card bento-dark" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <article class="bento-card bento-dark about-bento-hero">
             <div>
               <span class="card-tag">Keunggulan Kemitraan</span>
-              <h2 id="pendekatan-title-id" style="font-family: var(--font-serif); font-size: 2.2rem; color: white; margin-bottom: 16px;">
+              <h2 id="pendekatan-title-id" class="about-hero-title">
                 Mengapa Memilih Sentuhan SparkAI?
               </h2>
-              <p style="margin-bottom: 24px; color: #ffffff;">
+              <p class="about-hero-text">
                 Kami memadukan ketelitian software engineering dengan sensibilitas estetika produk, memastikan solusi AI tidak hanya bertenaga, tetapi juga menyenangkan saat dioperasikan oleh manusia.
               </p>
             </div>
-            <div style="border-top: 1px solid rgba(255, 202, 212, 0.2); padding-top: 18px; font-size: 0.85rem; color: var(--soft-blush);">
+            <div class="about-hero-footer">
               Arsitektur transparan tanpa ikatan lisensi vendor sepihak.
             </div>
           </article>
@@ -203,20 +203,20 @@
       <!-- CONTACT BENTO SECTION -->
       <section id="kontak" aria-labelledby="kontak-title-id">
         <div class="contact-bento">
-          <article class="bento-card bento-blush" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <article class="bento-card bento-blush contact-hero-card">
             <div>
-              <span class="card-tag" style="background: white;">Mulai Sesi</span>
-              <h2 id="kontak-title-id" style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--deep-plum); margin-bottom: 16px;">
+              <span class="card-tag tag-white">Mulai Sesi</span>
+              <h2 id="kontak-title-id" class="contact-hero-title">
                 Mari Merajut Solusi Bersama.
               </h2>
-              <p style="color: var(--text-muted); margin-bottom: 24px;">
+              <p class="contact-hero-desc">
                 Ceritakan visi, kendala data, atau alur kerja yang ingin Anda sederhanakan. Engineer kami siap berdiskusi santai mengenai opsi terbaik.
               </p>
             </div>
 
-            <div style="background: white; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-soft);">
-              <small style="text-transform: uppercase; font-weight: 700; color: var(--raspberry); font-size: 0.75rem;">Surel Diskusi</small>
-              <p style="font-size: 1.05rem; font-weight: 700; color: var(--deep-plum); margin-top: 4px;">hello@sparkai.studio</p>
+            <div class="contact-info-box">
+              <span class="contact-info-label">Surel Diskusi</span>
+              <p class="contact-info-val">hello@sparkai.studio</p>
             </div>
           </article>
 
@@ -247,7 +247,7 @@
                 <textarea id="pesan" rows="4" placeholder="Ceritakan sistem apa yang ingin Anda wujudkan..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%; min-height: 48px;">
+              <button type="submit" class="btn btn-primary btn-submit-block">
                 Kirimkan Pesan Diskusi
               </button>
             </form>
@@ -259,8 +259,8 @@
 
     <!-- FOOTER PILL -->
     <footer class="footer-bento">
-      <div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--deep-plum);">
-        <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" alt="SparkAI Logo" class="footer-logo" width="24" height="24" />
         SparkAI Studio
       </div>
 
@@ -271,12 +271,11 @@
         <a href="cv.html">Curriculum Vitae</a>
       </nav>
 
-      <span style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 SparkAI. PABWE P2.</span>
+      <span class="copyright-text">&copy; 2026 SparkAI. PABWE P2.</span>
     </footer>
 
   </div>
 
-  <!-- Script Toggle Navigasi Mobile -->
   <script>
     const toggleBtn = document.getElementById('mobileNavToggle');
     const drawer = document.getElementById('mobileDrawer');

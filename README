@@ -1,0 +1,39 @@
+# Panduan Praktikum 2 — Pemrograman Aplikasi Berbasis Web (PABWE) 2026
+
+**Fokus Utama:** Implementasi CSS Murni, Bootstrap 5, dan Tailwind CSS 4  
+**Objektif:** Mengembangkan situs web multi-halaman yang responsif untuk entitas bisnis di bidang **Penyedia Solusi & Layanan Kecerdasan Buatan (AI Solutions & Services)**. Setiap halaman dirancang secara mandiri untuk menguji kompetensi teknik styling web modern yang berbeda.
+
+Bahasa pengantar isi: **Bahasa Indonesia** (istilah teknis/industri diperbolehkan memakai istilah baku Bahasa Inggris).
+
+---
+
+## 1. Identitas Brand & Kasus
+
+- Bidang usaha: Solusi, konsultasi, dan otomasi berbasis Kecerdasan Buatan (AI Agency / Tech Studio).
+- Pilihan referensi jenama: `DelAI Studio`, `NovaMind AI`, `Synapse Logic`, atau nama studio AI orisinal kreasi Anda.
+- **Kaidah Utama:** Identitas nama studio dan logo wajib **identik dan konsisten** di keempat halaman web.
+
+---
+
+## 2. Standar & Aturan Umum Pengembangan
+
+- **Semantik Modern:** Wajib menerapkan elemen struktural HTML5 secara tepat (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`), hindari penggunaan `<div>` secara berlebihan (*div-soup*).
+- **Desain Responsif:** Seluruh tampilan antarmuka wajib tertata rapi saat diakses dari perangkat seluler (smartphone) hingga layar monitor desktop.
+- **Pemanfaatan Media:** Gambar visual dapat dimuat dari direktori internal (`assets/img/`) ataupun penyedia gambar eksternal (Unsplash/Pexels/CDN).
+- **Orisinalitas:** Dilarang mengumpulkan kode templat lab/tutorial mentah tanpa adaptasi konteks agensi AI.
+- **Kebersihan Kode:** Sertakan komentar penjelas ringkas pada blok-blok kode utama serta terapkan indentasi yang rapi dan seragam.
+
+---
+
+## 3. Susunan Direktori Proyek
+
+```text
+├── index.html              # Halaman profil utama / Landing Page (Pure CSS)
+├── blog.html               # Katalog wawasan & artikel AI (Bootstrap 5)
+├── blog-detail.html        # Laman lengkap baca artikel AI (Bootstrap 5)
+├── cv.html                 # Profil profesional / Resume pengembang (Tailwind CSS 4)
+├── assets/
+│   ├── css/
+│   │   └── style.css       # Lembar gaya eksternal khusus index.html
+│   └── img/                # Direktori aset grafis & ilustrasi
+└── README.md               # Berkas petunjuk & dokumentasi proyek

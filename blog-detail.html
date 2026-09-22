@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Eksplorasi optimasi pipeline Retrieval-Augmented Generation untuk korporasi bersama SparkAI." />
+  <meta name="theme-color" content="#602437" />
   <title>Mengoptimalkan Pipeline RAG untuk Korporasi - SparkAI Journal</title>
   
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
@@ -27,99 +28,8 @@
     rel="stylesheet"
   />
 
-  <style>
-    :root {
-      --deep-plum: #602437;
-      --berry-rose: #8A2846;
-      --raspberry: #B9375E;
-      --soft-blush: #FFCAD4;
-      --rose-pink: #E05780;
-
-      --bg-page: #FBF0F2;
-      --border-soft: #F1D4DB;
-      --font-serif: "Playfair Display", Georgia, serif;
-      --font-sans: "Plus Jakarta Sans", sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-page);
-      color: #3A1521;
-      font-family: var(--font-sans);
-      padding: 20px 16px;
-    }
-
-    .font-serif {
-      font-family: var(--font-serif);
-    }
-
-    .site-header-pill {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-soft);
-      border-radius: 50rem;
-      padding: 8px 24px;
-    }
-
-    .brand-title {
-      font-family: var(--font-serif);
-      color: var(--deep-plum);
-      font-size: 1.45rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo-img {
-      width: 38px;
-      height: 38px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5px solid var(--border-soft);
-    }
-
-    .article-blockquote {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--deep-plum);
-      background-color: #FFF4F6;
-      border-left: 4px solid var(--raspberry);
-      border-radius: 0 1.5rem 1.5rem 0;
-      padding: 1.8rem;
-      margin-block: 2rem;
-    }
-
-    .editorial-alert {
-      background-color: #FFE8ED;
-      border: 1px solid var(--border-soft);
-      border-radius: 1.2rem;
-      padding: 1.2rem;
-      color: var(--deep-plum);
-    }
-
-    .btn-bento-primary {
-      background-color: var(--deep-plum);
-      color: #ffffff;
-      border-radius: 50rem;
-      padding: 10px 24px;
-      font-weight: 600;
-      border: none;
-    }
-
-    .btn-bento-primary:hover {
-      background-color: var(--berry-rose);
-      color: #ffffff;
-    }
-
-    .footer-pill {
-      background: #ffffff;
-      border: 1px solid var(--border-soft);
-      border-radius: 50rem;
-      padding: 16px 32px;
-    }
-  </style>
+  <!-- Shared External Blog CSS (Bebas Duplikasi) -->
+  <link rel="stylesheet" href="assets/css/blog.css" />
 </head>
 <body>
   <div class="container py-2 d-flex flex-column gap-4" style="max-width: 1080px;">
@@ -128,7 +38,7 @@
     <header class="site-header-pill sticky-top">
       <nav class="navbar navbar-expand-md p-0" aria-label="Navigasi Header Detail Esai">
         <a class="brand-title" href="index.html">
-          <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo-img" />
+          <img src="assets/img/logo.png" alt="SparkAI Logo" class="brand-logo-img" width="38" height="38" />
           <span>SparkAI</span>
         </a>
 
@@ -155,7 +65,7 @@
               <a class="nav-link text-muted fw-semibold" href="cv.html">CV Developer</a>
             </li>
             <li class="nav-item ms-md-2">
-              <a class="btn-bento-primary text-decoration-none py-1 px-3 small" href="index.html#kontak">Konsultasi</a>
+              <a class="btn-bento-primary py-1 px-3 small" href="index.html#kontak">Konsultasi</a>
             </li>
           </ul>
         </div>
@@ -191,6 +101,8 @@
             src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop&q=80"
             class="img-fluid w-100"
             alt="Ilustrasi pemrosesan data neural pada pipeline RAG"
+            width="1200"
+            height="440"
             style="max-height: 440px; object-fit: cover;"
           />
         </div>
@@ -205,7 +117,6 @@
             Di sinilah arsitektur <strong>Retrieval-Augmented Generation (RAG)</strong> berperan sebagai jembatan pengetahuan privat. Alih-alih melatih ulang model dasar secara berkala—yang menelan anggaran komputasi masif—sistem RAG secara dinamis menarik paragraf relevan dari basis data vektor saat kueri diajukan, lalu menyertakannya ke dalam ruang konteks model sebagai landasan bernalar.
           </p>
 
-          <!-- Alert Khusus Tata Kelola Data -->
           <div class="editorial-alert my-4 d-flex gap-3 align-items-center" role="note">
             <i class="bi bi-shield-check fs-2 text-danger" aria-hidden="true"></i>
             <div>
@@ -218,12 +129,10 @@
             Eksperimen di laboratorium kami membuktikan bahwa penentu presisi jawaban terbesar terletak pada fase <em>semantic chunking</em>. Dokumen tidak boleh diiris secara kaku berdasarkan jumlah karakter acak, melainkan harus dipisah menurut unit makna wacana, dilengkapi hierarki subjudul, dan dipadukan dengan teknik <em>cross-encoder re-ranking</em> agar informasi yang diteruskan ke prompt memiliki nilai relevansi tertinggi.
           </p>
 
-          <!-- Blockquote -->
           <blockquote class="article-blockquote">
             "Sistem kecerdasan artifisial yang matang tidak berusaha menebak segala hal, melainkan mengetahui secara pasti di mana fakta dapat diverifikasi kembali."
           </blockquote>
 
-          <!-- Urutan Heading H2 -->
           <h2 class="font-serif h4 fw-bold mt-4 mb-3" style="color: var(--deep-plum);">
             Tiga Pilar Presisi RAG Enterprise:
           </h2>
@@ -274,15 +183,15 @@
       </article>
     </main>
 
-    <!-- FOOTER PILL LENGKAP -->
+    <!-- FOOTER NAVIGASI LENGKAP KE INDEX, BLOG, & CV -->
     <footer class="footer-pill d-flex flex-wrap justify-content-between align-items-center gap-3">
       <div class="font-serif fw-bold d-flex align-items-center gap-2" style="color: var(--deep-plum);">
-        <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" />
+        <img src="assets/img/logo.png" alt="SparkAI Logo" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;" width="24" height="24" />
         SparkAI Studio
       </div>
       <nav aria-label="Navigasi Footer Detail" class="d-flex gap-4 small fw-semibold">
         <a href="index.html" class="text-muted text-decoration-none">Beranda</a>
-        <a href="blog.html" class="text-dark text-decoration-none">Jurnal AI</a>
+        <a href="blog.html" class="text-muted text-decoration-none">Jurnal AI</a>
         <a href="cv.html" class="text-muted text-decoration-none">CV Developer</a>
       </nav>
       <small class="text-muted">&copy; 2026 SparkAI. PABWE P2.</small>
